@@ -5,5 +5,7 @@ import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://will.trodd.dev',
+  base: '/wtrodd-portfolio',
   integrations: [tailwind(), vue()]
 });
