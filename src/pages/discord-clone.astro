@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title='DiscordClone'>
+  <div class='flex flex-col min-h-screen'>
+    <main class='bg-secondary-blue text-white min-h-full grow'>
+      <div class='flex flex-col min-h-screen'>
+        <main class='bg-secondary-blue text-white min-h-full grow'>
+          <header class='bg-primary-blue lg:h-96 h-56 pt-4'>
+            <div class='lg:px-32 px-4 h-full'>
+              <NavBar />
+              <div
+                class='flex flex-col h-[75%] transition-all ease-in justify-center'
+              >
+                <h1 class='md:text-6xl text-2xl font-bold'>DiscordClone</h1>
+                <a
+                  class='text-zinc-400'
+                  href='https://github.com/WilliamTrodd/disclone/tree/dev'
+                  >Github Repo</a
+                >
+              </div>
+            </div>
+          </header>
+          <div class='py-8 lg:px-32 px-4 flex items-center justify-around'>
+            <div
+              class='flex flex-col h-fit bg-tertiary-blue px-6 py-3 rounded-md'
+            >
+              <h2 class='text-4xl font-bold mb-3'>Tech Stack</h2>
+              <ul class=''>
+                <li>TypeScript</li>
+                <li>VueJs</li>
+                <li>TailwindCSS</li>
+                <li>NodeJS</li>
+                <li>Express</li>
+                <li>MongoDB</li>
+              </ul>
+            </div>
+            <img src='/disclone-screenshot.png' class='w-3/5' />
+          </div>
+          <div class='bg-tertiary-blue mt-2 px-4 pt-8 pb-12'>
+            <h2 class='text-4xl font-bold w-fit'>Details</h2>
+            <br />
+            <p class='font-bold'>
+              DiscordClone is a full-stack web application that allows users to
+              chat with other users.
+            </p>
+            <br />
+            <p>
+              The default MongoDB driver was used with the Mongo aggregation
+              pipeline to collect data from the API. Axios was used to make
+              requests to the API.
+            </p>
+            <br />
+            <p>
+              The WebSocket library 'ws' was used to share messages between
+              users and to update usernames across clients. In future, I would
+              look at using Redis to handle horizontal scaling.
+            </p>
+            <br />
+            <p>
+              User accounts are created using Firebase Authentication. The
+              user's details are initially populated from this, and then details
+              can be changed through the application.
+            </p>
+          </div>
+        </main>
+      </div>
+    </main>
+    <Footer />
+  </div>
+</Layout>

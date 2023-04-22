@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import NavBar from "../components/NavBar.astro";
+---
+
+<Layout title='This Site!'>
+  <div class='flex flex-col min-h-screen'>
+    <main class='bg-secondary-blue text-white min-h-full grow'>
+      <header class='bg-primary-blue lg:h-96 h-56 pt-4'>
+        <div class='lg:px-32 px-4 h-full'>
+          <NavBar />
+          <div
+            class='flex flex-col h-[75%] transition-all ease-in justify-center'
+          >
+            <h1 class='md:text-6xl text-2xl font-bold'>This Portfolio Site!</h1>
+            <a
+              class='text-zinc-400'
+              href='https://github.com/WilliamTrodd/disclone/tree/dev'
+              >Github Repo</a
+            >
+          </div>
+        </div>
+      </header>
+      <div class='py-8 lg:px-32 px-4 flex items-center justify-around'>
+        <div class='flex flex-col h-fit bg-tertiary-blue px-6 py-3 rounded-md'>
+          <h2 class='text-4xl font-bold mb-3'>Tech Stack</h2>
+          <ul class=''>
+            <li>TypeScript</li>
+            <li>Astro</li>
+            <li>A tiny bit of Vue</li>
+          </ul>
+        </div>
+        <img src='/portfolio-screenshot.png' class='w-3/5' />
+      </div>
+      <div class='bg-tertiary-blue mt-2 px-4 pt-8 pb-12'>
+        <h2 class='text-4xl font-bold w-fit'>Details</h2>
+        <br />
+        <p class='font-bold'>
+          This site is built with Astro, a static site generator that uses
+          components.
+        </p>
+        <p>
+          I chose Astro because of its performant nature and I also wanted to
+          learn about Astro because it is a new framework and I wanted to see
+          how it compares to other frameworks like Vue and React.
+        </p>
+        <p>
+          I wanted to use it to develop a small site before undertaking a larger
+          project with it. A portfolio page offered a perfect opportunity to do
+          this. My next project with Astro will be a blog site.
+        </p>
+      </div>
+    </main>
+    <Footer />
+  </div>
+</Layout>

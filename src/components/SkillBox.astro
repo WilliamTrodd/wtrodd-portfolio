@@ -1,0 +1,18 @@
+---
+export interface Props {
+  title: string;
+  text: string;
+  icon: string;
+  page: string;
+}
+
+const { title, text, icon, page } = Astro.props;
+---
+
+<a href={page} class='row-span-4'>
+  <div class='row-span-4'>
+    <img class='rounded-md' src={icon} />
+    <h3 class='text-2xl font-bold'>{title}</h3>
+    <p class='text-darker-lilac'>{text}</p>
+  </div>
+</a>

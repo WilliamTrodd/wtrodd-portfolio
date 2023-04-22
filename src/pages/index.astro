@@ -1,81 +1,72 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import SkillBox from "../components/SkillBox.astro";
+import NavBar from "../components/NavBar.astro";
+import AboutMe from "../components/AboutMe.vue";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<script>
+  const contactButton = document.getElementById("contact-button");
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+  contactButton?.addEventListener("click", () => {
+    window.open("mailto:william.trodd@gmail.com");
+  });
+</script>
+
+<Layout title='Will Trodd'>
+  <div class='flex flex-col min-h-screen'>
+    <main class='bg-secondary-blue min-w-full min-h-full text-white'>
+      <header class='bg-primary-blue h-96 pt-4'>
+        <div class='lg:px-32 px-4 h-full'>
+          <NavBar />
+          <div
+            class='flex flex-col h-[65%] justify-center transition-all ease-in'
+          >
+            <span class='md:text-5xl text-md font-extrabold'>Hi!</span>
+            <h1 class='md:text-6xl text-2xl font-bold'>I'm Will Trodd</h1>
+            <h2 class='md:text-5xl text-2xl font-bold'>I make software</h2>
+          </div>
+          <div class='h-[25%] flex items-center'>
+            <button
+              id='contact-button'
+              class='w-fit px-4 py-2 border-solid border-4 rounded-md border-accent-pink'
+            >
+              Get in touch!
+            </button>
+          </div>
+        </div>
+      </header>
+      <div class='pt-8 lg:px-32 px-4'>
+        <h2 id='aboutMe' class='text-4xl font-bold mb-12'>About Me</h2>
+        <AboutMe client:load />
+      </div>
+      <div
+        class='bg-tertiary-blue mt-2 px-[10%] pt-8 pb-12 flex justify-center'
+      >
+        <grid class='grid grid-cols-2 grid-rows-10 gap-4'>
+          <h2 id='projects' class='text-4xl font-bold w-fit'>Portfolio</h2>
+          <SkillBox
+            title='Discord Clone'
+            text='A clone of the Discord chat app'
+            icon='/discord-logo.png'
+            page='/discord-clone'
+          />
+          <SkillBox
+            title='FullStack Open'
+            text='FullStack Open course from the University of Helsinki'
+            icon='/js-icon.png'
+            page='/fullstack-open'
+          />
+          <SkillBox
+            title='This site!'
+            text='This portfolio site was built with Astro (and a small Vue island)'
+            icon='/astro-logo.png'
+            page='/portfolio'
+          />
+        </grid>
+      </div>
+    </main>
+    <Footer />
+  </div>
+</Layout>
