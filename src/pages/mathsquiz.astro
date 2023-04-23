@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title='Kotlin Android App'>
+  <div class='flex flex-col min-h-screen'>
+    <main class='bg-secondary-blue text-white min-h-full grow'>
+      <div class='flex flex-col min-h-screen'>
+        <main class='bg-secondary-blue text-white min-h-full grow'>
+          <header class='bg-primary-blue lg:h-96 h-56 pt-4'>
+            <div class='lg:px-32 px-4 h-full'>
+              <NavBar />
+              <div
+                class='flex flex-col h-[75%] transition-all ease-in justify-center'
+              >
+                <h1 class='md:text-6xl text-2xl font-bold'>Maths Quiz App</h1>
+                <a
+                  class='text-zinc-400'
+                  href='https://github.com/WilliamTrodd/MathsQuizv3'
+                  >Github Repo</a
+                >
+              </div>
+            </div>
+          </header>
+          <div class='py-8 lg:px-32 px-4 flex items-center justify-around'>
+            <div
+              class='flex flex-col h-fit bg-tertiary-blue px-6 py-3 rounded-md'
+            >
+              <h2 class='text-4xl font-bold mb-3'>Language Used</h2>
+              <ul class=''>
+                <li>Kotlin</li>
+              </ul>
+            </div>
+            <img src='/kotlin-snippet.png' class='w-3/5' />
+          </div>
+          <div class='bg-tertiary-blue mt-2 px-4 pt-8 pb-12'>
+            <h2 class='text-4xl font-bold w-fit'>Details</h2>
+            <br />
+            <p class='font-bold'>
+              I developed this app to help guide students who were developing
+              simple apps of their own.
+            </p>
+            <br />
+            <p>
+              It was developed using Kotlin and Android Studio. Both of these
+              tools are quite complex to use, especially for the novice
+              developer, so I wanted to create a simple app that would help
+              guide them through the process. The most interesting concepts were
+              how different Fragments interact, and how to pass values between
+              them.
+            </p>
+            <br />
+            <p>
+              In future, if I were to teach the class again I would suggest
+              students use a Framework like React Native. The tools to develop
+              it and the language are much simpler to use, and the app would be
+              much more flexible.
+            </p>
+            <br />
+            <p>
+              I was also able to use this app to teach automated testing using
+              the Espresso testing framework.
+            </p>
+          </div>
+        </main>
+      </div>
+    </main>
+    <Footer />
+  </div>
+</Layout>
