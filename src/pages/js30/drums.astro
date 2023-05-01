@@ -1,0 +1,166 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NavBar from "../../components/NavBar.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout title='JS30 Drumkit'>
+  <div class='flex flex-col min-h-screen'>
+    <main class='bg-secondary-blue grow min-h-full text-white'>
+      <header class='bg-primary-blue h-56 pt-4'>
+        <div class='lg:px-32 px-4 h-full'>
+          <NavBar />
+          <div
+            class='flex flex-col h-[75%] transition-all ease-in justify-center'
+          >
+            <h1 class='md:text-6xl text-2xl font-bold'>
+              JS30 Challenge 1 - Drumkit
+            </h1>
+          </div>
+        </div>
+      </header>
+      <div
+        class='py-8 flex px-4 items-center flex-wrap justify-around border-white'
+      >
+        <div
+          data-key='KeyA'
+          class='border-solid w-32 origin-center rounded-lg border-4 m-4 text-2xl px-4 py-2 transition-all duration-75 ease-in text-center text-white bg-tertiary-blue'
+        >
+          <span class='block text-6xl'>A</span>
+          <span class='uppercase text-lg tracking-widest'>boom</span>
+        </div>
+        <div
+          data-key='KeyS'
+          class='border-solid w-32 origin-center rounded-lg border-4 m-4 text-2xl px-4 py-2 transition-all duration-75 ease-in text-center text-white bg-tertiary-blue'
+        >
+          <span class='block text-6xl'>S</span>
+          <span class='uppercase text-lg tracking-widest'>hihat</span>
+        </div>
+        <div
+          data-key='KeyD'
+          class='border-solid w-32 origin-center rounded-lg border-4 m-4 text-2xl px-4 py-2 transition-all duration-75 ease-in text-center text-white bg-tertiary-blue'
+        >
+          <span class='block text-6xl'>D</span>
+          <span class='uppercase text-lg tracking-widest'>kick</span>
+        </div>
+        <div
+          data-key='KeyF'
+          class='border-solid w-32 origin-center rounded-lg border-4 m-4 text-2xl px-4 py-2 transition-all duration-75 ease-in text-center text-white bg-tertiary-blue'
+        >
+          <span class='block text-6xl'>F</span>
+          <span class='uppercase text-lg tracking-widest'>openhat</span>
+        </div>
+        <div
+          data-key='KeyG'
+          class='border-solid w-32 origin-center rounded-lg border-4 m-4 text-2xl px-4 py-2 transition-all duration-75 ease-in text-center text-white bg-tertiary-blue'
+        >
+          <span class='block text-6xl'>G</span>
+          <span class='uppercase text-lg tracking-widest'>clap</span>
+        </div>
+        <div
+          data-key='KeyH'
+          class='border-solid w-32 origin-center rounded-lg border-4 m-4 text-2xl px-4 py-2 transition-all duration-75 ease-in text-center text-white bg-tertiary-blue'
+        >
+          <span class='block text-6xl'>H</span>
+          <span class='uppercase text-lg tracking-widest'>ride</span>
+        </div>
+        <div
+          data-key='KeyJ'
+          class='border-solid w-32 origin-center rounded-lg border-4 m-4 text-2xl px-4 py-2 transition-all duration-75 ease-in text-center text-white bg-tertiary-blue'
+        >
+          <span class='block text-6xl'>J</span>
+          <span class='uppercase text-lg tracking-widest'>snare</span>
+        </div>
+        <div
+          data-key='KeyK'
+          class='border-solid w-32 origin-center rounded-lg border-4 m-4 text-2xl px-4 py-2 transition-all duration-75 ease-in text-center text-white bg-tertiary-blue'
+        >
+          <span class='block text-6xl'>K</span>
+          <span class='uppercase text-lg tracking-widest'>tom</span>
+        </div>
+        <div
+          data-key='KeyL'
+          class='border-solid w-32 origin-center rounded-lg border-4 m-4 text-2xl px-4 py-2 transition-all duration-75 ease-in text-center text-white bg-tertiary-blue'
+        >
+          <span class='block text-6xl'>L</span>
+          <span class='uppercase text-lg tracking-widest'>tink</span>
+        </div>
+      </div>
+      <div class='bg-tertiary-blue mt-2 px-4 pt-8 pb-12'>
+        <h3 class='text-2xl uppercase'>Development process</h3>
+        <div class='flex justify-between items-center'>
+          <div class='w-2/5 pr-2'>
+            <p>
+              I wanted to implement the JS30 activities on my portfolio page as
+              a way to develop my JS/TS skills. I also wanted to stick with
+              utility class CSS, so continued with Tailwind and kept the themes
+              in line with my portfolio page.
+            </p>
+            <p>
+              Most of the scripting was fairly straightforward, however there
+              was an issue with the types of the event <i>e</i>. I had to write
+              a typeguard to check if the event was a TransitionEvent.
+            </p>
+            <p>
+              With this set up I was able to add event listeners to each <b
+                >key</b
+              > element that would trigger on a 'transitionend' event.
+            </p>
+          </div>
+          <img
+            src='/code-screenshots/typeguard.png'
+            alt='typeguard'
+            class='rounded-md w-3/5 h-full'
+          />
+        </div>
+      </div>
+
+      <audio data-key='KeyA' src='/drum-sounds/boom.wav'></audio>
+      <audio data-key='KeyS' src='/drum-sounds/hihat.wav'></audio>
+      <audio data-key='KeyD' src='/drum-sounds/kick.wav'></audio>
+      <audio data-key='KeyF' src='/drum-sounds/openhat.wav'></audio>
+      <audio data-key='KeyG' src='/drum-sounds/clap.wav'></audio>
+      <audio data-key='KeyH' src='/drum-sounds/ride.wav'></audio>
+      <audio data-key='KeyJ' src='/drum-sounds/snare.wav'></audio>
+      <audio data-key='KeyK' src='/drum-sounds/tom.wav'></audio>
+      <audio data-key='KeyL' src='/drum-sounds/tink.wav'></audio>
+    </main>
+    <Footer />
+  </div>
+</Layout>
+
+<script>
+  // TypeGuards
+  const isTransitionEvent = (e: Event): e is TransitionEvent => {
+    return e.type === "transitionend";
+  };
+
+  // Event Handlers
+  const keypress = (e: KeyboardEvent) => {
+    const audio: HTMLAudioElement | null = document.querySelector(
+      `audio[data-key="${e.code}"]`
+    );
+    const key: HTMLElement | null = document.querySelector(
+      `div[data-key="${e.code}"]`
+    );
+    if (!audio) return;
+    audio.currentTime = 0;
+    audio.play();
+    key?.classList.add("scale-110", "border-primary-blue");
+  };
+
+  const removeTransition = (e: Event) => {
+    if (!isTransitionEvent(e)) return;
+    if (e.propertyName !== "transform") return;
+    if (!e.target) return;
+    const target = e.target as Element;
+    target.classList.remove("scale-110", "border-primary-blue");
+  };
+
+  // Event Listeners
+  window.addEventListener("keydown", keypress);
+  const keys = document.querySelectorAll("div[data-key]");
+  keys.forEach((key) => {
+    key.addEventListener("transitionend", removeTransition);
+  });
+</script>
