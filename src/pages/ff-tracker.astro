@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro'
+import NavBar from '../components/NavBar.astro'
+import Footer from '../components/Footer.astro'
+---
+
+<Layout title='Fighting Fantasy RPG Tracker'>
+  <div class='flex flex-col min-h-screen'>
+    <main class='bg-secondary-blue text-white min-h-full grow'>
+      <div class='flex flex-col min-h-screen'>
+        <main class='bg-secondary-blue text-white min-h-full grow'>
+          <header class='bg-primary-blue lg:h-96 h-56 pt-4'>
+            <div class='lg:px-32 px-4 h-full'>
+              <NavBar />
+              <div
+                class='flex flex-col h-[75%] transition-all ease-in justify-center'
+              >
+                <h1 class='md:text-6xl text-2xl font-bold'>
+                  Fighting Fantasy RPG Tracker
+                </h1>
+                <a
+                  class='text-zinc-400'
+                  href='https://github.com/WilliamTrodd/FightingFantasyTracker'
+                  >Github Repo</a
+                >
+              </div>
+            </div>
+          </header>
+          <div class='py-8 lg:px-32 px-4 flex items-center justify-around'>
+            <div
+              class='flex flex-col h-fit bg-tertiary-blue px-6 py-3 rounded-md'
+            >
+              <h2 class='text-4xl font-bold mb-3'>Stack Used</h2>
+              <ul class=''>
+                <li>Vue</li>
+                <li>Pinia</li>
+                <li>Vite</li>
+                <li>TailwindCSS</li>
+              </ul>
+            </div>
+            <img src='/ff-tracker.png' class='w-3/5' />
+          </div>
+          <div class='bg-tertiary-blue mt-2 px-4 pt-8 pb-12'>
+            <h2 class='text-4xl font-bold w-fit'>Details</h2>
+            <br />
+            <p class='font-bold'>
+              I developed this web-app as a way to track a playthrough of the
+              Fighting Fantasy RPG Gamebooks.
+            </p>
+            <br />
+            <p>
+              I wanted to sue this as an experiment in UI/UX and using Pinia for
+              complex state management. This is an ongoing project, and I am
+              currently working on adding more features to it to enable users to
+              conduct dice rolls & engage in 'encounters'.
+            </p>
+            <br />
+            <p>
+              Next Steps
+              <ul>
+                <li>Leverage LocalStorage or Indexed DB to store data.</li>
+                <li>
+                  Add a dice roller to the app, to allow users to roll dice
+                  without having to leave the app
+                </li>
+                <li>Complete the encounters section.</li>
+                <li>Allow users to save their playthroughs.</li>
+              </ul>
+            </p>
+          </div>
+        </main>
+      </div>
+    </main>
+    <Footer />
+  </div>
+</Layout>
