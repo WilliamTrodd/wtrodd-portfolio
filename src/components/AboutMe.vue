@@ -19,7 +19,7 @@ const active = ref('AboutMe')
     <div class='flex flex-col'>
       <div v-if="active === 'AboutMe'">
         <p class='text-lg w-96'>
-          I'm a software engineer based in the UK. I've worked on a variety of
+          I'm a software engineer based in Bahrain. I've worked on a variety of
           projects, from small web apps to multi-user chat apps.
         </p>
         <p class='text-lg w-96'>
