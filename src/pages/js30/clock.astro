@@ -1,0 +1,36 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NavBar from "../../components/NavBar.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout title='JS30 Drumkit'>
+  <div class='flex flex-col min-h-screen'>
+    <main class='bg-secondary-blue grow min-h-full text-white'>
+      <header class='bg-primary-blue h-56 pt-4'>
+        <div class='lg:px-32 px-4 h-full'>
+          <NavBar />
+          <div
+            class='flex flex-col h-[75%] transition-all ease-in justify-center'
+          >
+            <h1 class='md:text-6xl text-2xl font-bold'>
+              JS30 Challenge 2 - CSS + JS Clock
+            </h1>
+          </div>
+        </div>
+      </header>
+      <div
+        class='py-8 flex px-4 items-center flex-wrap justify-around border-white'
+      >
+      </div>
+      <div class='bg-tertiary-blue mt-2 px-4 pt-8 pb-12'>
+        <h3 class='text-2xl uppercase'>Development process</h3>
+        <div class='flex justify-between items-center'>
+          <div class='w-2/5 pr-2'></div>
+          <img src='' alt='' class='rounded-md w-3/5 h-full' />
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </div>
+</Layout>

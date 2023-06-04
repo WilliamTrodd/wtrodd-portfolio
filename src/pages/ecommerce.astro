@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro'
+import NavBar from '../components/NavBar.astro'
+import Footer from '../components/Footer.astro'
+---
+
+<Layout title='Ecommerce'>
+  <div class='flex flex-col min-h-screen'>
+    <main class='bg-secondary-blue text-white min-h-full grow'>
+      <div class='flex flex-col min-h-screen'>
+        <main class='bg-secondary-blue text-white min-h-full grow'>
+          <header class='bg-primary-blue lg:h-96 h-56 pt-4'>
+            <div class='lg:px-32 px-4 h-full'>
+              <NavBar />
+              <div
+                class='flex flex-col h-[75%] transition-all ease-in justify-center'
+              >
+                <h1 class='md:text-6xl text-2xl font-bold'>Ecommerce Site</h1>
+                <a class='text-zinc-400' href='https://cmh-store.netlify.app'>
+                  Site Link
+                </a>
+                <a
+                  class='text-zinc-400'
+                  href='https://github.com/WilliamTrodd/cmh-store'
+                >
+                  Github Repo
+                </a>
+              </div>
+            </div>
+          </header>
+          <div class='py-8 lg:px-32 px-4 flex items-center justify-around'>
+            <div
+              class='flex flex-col h-fit bg-tertiary-blue px-6 py-3 rounded-md'
+            >
+              <h2 class='text-4xl font-bold mb-3'>Tech Stack</h2>
+              <ul class=''>
+                <li>SolidJS</li>
+                <li>TailwindCSS</li>
+              </ul>
+            </div>
+            <img src='/cmh-store.png' class='w-3/5' />
+          </div>
+          <div class='bg-tertiary-blue mt-2 px-4 pt-8 pb-12'>
+            <h2 class='text-4xl font-bold w-fit'>Details</h2>
+            <br />
+            <p class='font-bold'>
+              This was my first time using SolidJS to build a complete site. I
+              used it in conjunction with TailwindCSS to create a basic
+              ecommerce site with a focus on mobile design.
+            </p>
+          </div>
+          <br />
+          <div class='w-fit mx-8'>
+            <p class=''>
+              I particularly enjoyed the <code>&lt;For&nbsp;/&gt;</code> and <code
+                >&lt;Show&nbsp;/&gt;</code
+              > syntax. It made it far easier to interact with elements in a performant
+              way.
+            </p>
+            <br />
+            <section class='mx-8'>
+              <span class='font-semibold -ml-4'>Next steps:</span>
+              <li>Implement a checkout</li>
+              <li>Add an admin page so new products can be added</li>
+            </section>
+          </div>
+        </main>
+      </div>
+    </main>
+  </div>
+</Layout>
+<Footer />

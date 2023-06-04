@@ -1,17 +1,17 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import SkillBox from "../components/SkillBox.astro";
-import NavBar from "../components/NavBar.astro";
-import AboutMe from "../components/AboutMe.vue";
-import Footer from "../components/Footer.astro";
+import Layout from '../layouts/Layout.astro'
+import SkillBox from '../components/SkillBox.astro'
+import NavBar from '../components/NavBar.astro'
+import AboutMe from '../components/AboutMe.vue'
+import Footer from '../components/Footer.astro'
 ---
 
 <script>
-  const contactButton = document.getElementById("contact-button");
+  const contactButton = document.getElementById('contact-button')
 
-  contactButton?.addEventListener("click", () => {
-    window.open("mailto:william.trodd@gmail.com");
-  });
+  contactButton?.addEventListener('click', () => {
+    window.open('mailto:william.trodd@gmail.com')
+  })
 </script>
 
 <Layout title='Will Trodd'>
@@ -69,6 +69,12 @@ import Footer from "../components/Footer.astro";
             text='A maths quiz app for Android built for a class I taught'
             icon='/android-logo.png'
             page='/mathsquiz'
+          />
+          <SkillBox
+            title='Ecommerce Site'
+            text='A template for an ecommerce site built with SolidJS and Tailwind'
+            icon='/solidjs.png'
+            page='/ecommerce'
           />
         </grid>
       </div>
