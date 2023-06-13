@@ -2,19 +2,22 @@
 ---
 
 <script>
-  const aboutMe = document.getElementById("aboutMeButton");
-  const projects = document.getElementById("projectsButton");
+  const aboutMe = document.getElementById('aboutMeButton')
+  const projects = document.getElementById('projectsButton')
 
-  aboutMe?.addEventListener("click", () => {
-    window.location.href = "/#aboutMe";
-  });
+  aboutMe?.addEventListener('click', () => {
+    window.location.href = '/#aboutMe'
+  })
 
-  projects?.addEventListener("click", () => {
-    window.location.href = "/#projects";
-  });
+  projects?.addEventListener('click', () => {
+    window.location.href = '/#projects'
+  })
 </script>
 
-<div id='nav' class='flex justify-between items-center'>
+<div
+  id='nav'
+  class='flex justify-between items-center z-50 bg-secondary-blue py-2 px-4'
+>
   <a class='text-white font-bold w-24' href='/'>Will Trodd</a>
   <div class='text-center flex grow justify-around'>
     <button id='aboutMeButton' class='text-xs lg:text-lg'> About Me</button>

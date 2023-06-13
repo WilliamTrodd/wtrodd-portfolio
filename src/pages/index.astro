@@ -16,28 +16,38 @@ import Footer from '../components/Footer.astro'
 
 <Layout title='Will Trodd'>
   <div class='flex flex-col min-h-screen'>
-    <main class='bg-secondary-blue min-w-full min-h-full text-white'>
-      <header class='bg-primary-blue h-96 pt-4'>
-        <div class='lg:px-32 px-4 h-full'>
+    <main class='bg-secondary-blue min-w-full text-white'>
+      <header class='bg-primary-blue h-full mb-4'>
+        <div class='h-full'>
           <NavBar />
-          <div
-            class='flex flex-col h-[65%] justify-center transition-all ease-in'
-          >
-            <span class='md:text-5xl text-md font-extrabold'>Hi!</span>
-            <h1 class='md:text-6xl text-2xl font-bold'>I'm Will Trodd</h1>
-            <h2 class='md:text-5xl text-2xl font-bold'>I make software</h2>
-          </div>
-          <div class='h-[25%] flex items-center'>
-            <button
-              id='contact-button'
-              class='w-fit px-4 py-2 border-solid border-4 rounded-md border-accent-pink'
+          <div class='flex flex-col h-96 justify-center transition-all ease-in'>
+            <div
+              class='w-screen h-full grow bg-[#11111] flex justify-center items-center relative'
+              id='canvas-container'
             >
-              Get in touch!
-            </button>
+              <canvas id='canvas' class='absolute z-0'></canvas>
+              <div class='z-50 flex flex-col text-7xl font-light'>
+                <div class='flex items-center justify-between'>
+                  <span
+                    >Hello, I'm <span class='text-accent-pink'>Will</span
+                    >.</span
+                  >
+                  <button
+                    id='contact-button'
+                    class='text-sm w-fit px-4 py-2 border-solid border-4 rounded-md border-accent-pink bg-primary-blue'
+                  >
+                    Get in touch!
+                  </button>
+                </div>
+
+                <span>I'm a full stack web developer.</span>
+              </div>
+            </div>
           </div>
         </div>
       </header>
-      <div class='pt-8 lg:px-32 px-4'>
+
+      <div class='lg:px-32 px-4'>
         <h2 id='aboutMe' class='text-4xl font-bold mb-12'>About Me</h2>
         <AboutMe client:load />
       </div>
@@ -87,4 +97,7 @@ import Footer from '../components/Footer.astro'
     </main>
     <Footer />
   </div>
+  <script>
+    import '../scripts/starmap.ts'
+  </script>
 </Layout>
